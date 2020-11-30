@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "p5OZk2NejXPGmopqJ8/xtYhgmVY9v/iKJWL+Wx6GuOIHRMzyWWMy1ixt8B/0Vyf8Rl27xpBbM4lGp5MV+CwywQ==",
+  "success": true,
+  "projectFilePath": "D:\\repos\\Game\\Api\\Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mauguzun\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

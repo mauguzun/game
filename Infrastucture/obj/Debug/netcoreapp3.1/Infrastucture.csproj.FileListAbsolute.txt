@@ -1,0 +1,12 @@
+D:\repos\Game\Infrastucture\bin\Debug\netcoreapp3.1\Infrastucture.deps.json
+D:\repos\Game\Infrastucture\bin\Debug\netcoreapp3.1\Infrastucture.dll
+D:\repos\Game\Infrastucture\bin\Debug\netcoreapp3.1\Infrastucture.pdb
+D:\repos\Game\Infrastucture\bin\Debug\netcoreapp3.1\Data.dll
+D:\repos\Game\Infrastucture\bin\Debug\netcoreapp3.1\Data.pdb
+D:\repos\Game\Infrastucture\obj\Debug\netcoreapp3.1\Infrastucture.csprojAssemblyReference.cache
+D:\repos\Game\Infrastucture\obj\Debug\netcoreapp3.1\Infrastucture.AssemblyInfoInputs.cache
+D:\repos\Game\Infrastucture\obj\Debug\netcoreapp3.1\Infrastucture.AssemblyInfo.cs
+D:\repos\Game\Infrastucture\obj\Debug\netcoreapp3.1\Infrastucture.csproj.CoreCompileInputs.cache
+D:\repos\Game\Infrastucture\obj\Debug\netcoreapp3.1\Infrastucture.csproj.CopyComplete
+D:\repos\Game\Infrastucture\obj\Debug\netcoreapp3.1\Infrastucture.dll
+D:\repos\Game\Infrastucture\obj\Debug\netcoreapp3.1\Infrastucture.pdb
