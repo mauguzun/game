@@ -6,6 +6,6 @@ namespace Data.Entity
 {
     public enum Status
     {
-        Stopped, Started, Wined, Losed
+        Stopped = 0, Started = 1, Wined = 3, Losed = 4
     }
 }

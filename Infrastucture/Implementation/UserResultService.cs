@@ -2,6 +2,7 @@
 using Data.Entity;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.Json;
 
 namespace Infrastucture.Implementation
@@ -13,7 +14,7 @@ namespace Infrastucture.Implementation
         public IList<GameResult> BestPlayers(int count)
         {
             Load();
-            return GameResults;
+            return GameResults.OrderBy(x => x.Period).Take(count).ToList();
         }
 
         public void SaveUser(GameResult result)
@@ -26,7 +27,7 @@ namespace Infrastucture.Implementation
         private void Load()
         {
             try { this.GameResults =  JsonSerializer.Deserialize<List<GameResult>>(File.ReadAllText(_db));}
-            finally { }
+            catch { }
            
         }
         private void  Save()

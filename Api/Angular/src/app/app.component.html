@@ -1,0 +1,70 @@
+<div class="app-content" fullscreen>
+  <div class="container" style="min-height: 100vh;">
+
+
+    <mat-card *ngIf="gameStatus.Status === 3">
+      <mat-card-title>Congratulations , you win</mat-card-title>
+      <mat-card-content>
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="You name here , please " [(ngModel)]="user.Name">
+
+        </mat-form-field>
+        <button (click)="save()" mat-raised-button color="warn">Save Name</button>
+
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Did first number greater then second ?</mat-card-title>
+        <mat-card-title>{{gameStatus.Score}} Score</mat-card-title>
+        <mat-card-subtitle [ngSwitch]="gameStatus.Status">
+          <p *ngSwitchCase="0">Game not started</p>
+          <p *ngSwitchCase="1">Game started</p>
+          <p *ngSwitchCase="3">You win</p>
+          <p *ngSwitchCase="4">You lose  {{gameStatus.First}} / {{gameStatus.Second }}</p>
+
+        </mat-card-subtitle>
+
+
+      </mat-card-header>
+      <mat-card-content>
+        <button (click)="start()" mat-raised-button color="primary">start game</button>
+      </mat-card-content>
+    </mat-card>
+    <mat-progress-bar mode="query" *ngIf="loader"></mat-progress-bar>
+
+    <mat-card *ngIf="gameStatus.Status === 1">
+      <mat-card-title>Did number is bigger ?</mat-card-title>
+
+      <mat-card-content>
+        <mat-button-toggle-group>
+          <mat-button-toggle (change)="bet(true)">
+            More
+          </mat-button-toggle>
+          <mat-button-toggle (change)="bet(false)">
+            Less
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+
+
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card *ngIf="bestScores">
+      <mat-card-content>
+        <mat-list role="list">
+          <mat-list-item *ngFor="let item of bestScores" role="listitem">
+            {{ item.user.name }} -
+            <b> for {{  (item.period / 1000 ).toFixed(1) }} sec </b>
+          </mat-list-item>
+
+
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+
+</div>

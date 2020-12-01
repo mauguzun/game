@@ -27,15 +27,21 @@ namespace Infrastucture.Implementation
             this.calculate = calculate;
         }
 
-        public Dictionary<Status, int> Bet(bool more)
+        public BetAnswer Bet(bool more)
         {
             if (gameStatus != Status.Started)
                 throw new Exception("Please start game before");
 
-            if (more && first > second)
+            if (more && first > second || !more && first < second)
+            {
                 score += calculate.GetScore();
+                SetValues();
+            }
             else
+            {
                 gameStatus = Status.Losed;
+            }
+
 
             if (score >= countForWin)
             {
@@ -43,7 +49,7 @@ namespace Infrastucture.Implementation
                 gameStatus = Status.Wined;
             }
 
-            return new Dictionary<Status, int>() { { this.gameStatus, this.score } };
+            return new BetAnswer { Status = this.gameStatus, First = this.first, Second = second, Score = score };
         }
 
         public void StartGame()
@@ -52,21 +58,26 @@ namespace Infrastucture.Implementation
             this.started = DateTime.Now;
             this.period = 0;
             this.gameStatus = Status.Started;
+            SetValues();
         }
 
         public void SetValues()
         {
-            Random rand = new Random();
-            first = rand.Next(min, max);
-            while (first != second)
-                second = rand.Next(min, max);
+            do
+            {
+                first = new Random().Next(min, max);
+                second = new Random().Next(min, max);
+                //first = 1;
+                //second = 2;
+            }
+            while (first == second);
 
         }
 
         public GameResult GetGameResult(User user)
         {
             return new GameResult() { Period = period, Score = score, User = user };
-           
+
         }
     }
 }
